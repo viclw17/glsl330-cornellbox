@@ -9,4 +9,5 @@ out vec4 fragColor;
 void main() {
   vec3 color = texture(accumTexture, texCoord).xyz * samplesInv;
   fragColor = vec4(pow(color, vec3(0.4545)), 1.0);
+  // fragColor = vec4(color, 1.0);
 }

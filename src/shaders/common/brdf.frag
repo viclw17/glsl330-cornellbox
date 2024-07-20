@@ -24,7 +24,10 @@ vec3 sampleBRDF(in vec3 wo, out vec3 wi, in Material material, out float pdf) {
     switch(material.brdf_type) {
     // lambert
     case 0:
+        // receiving sample pdf
+        // then pass back out to caller
         wi = sampleCosineHemisphere(random(), random(), pdf);
+        // return albedo, kd kf
         return material.kd * PI_INV;
         break;
 
